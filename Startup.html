@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMangApp</title>
+    <link rel="stylesheet" href=""/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('Manga/pic2.jpeg') center/cover no-repeat;
+        }
+        
+        .container {
+            text-align: center;
+            border: 2px solid #03e9f4; /* Added border */
+            padding: 40px; /* Added padding */
+            border-radius: 10px; /* Added border-radius */
+            background-color: rgba(0, 0, 0, 0.6); /* Added transparent black background */
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9); /* Changed text color to white */
+            animation: wave 3s ease-in-out infinite, glowH1 1.5s infinite alternate; /* Added wave animation for h1 */
+        }
+
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes glowH1 {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.9); }
+            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.9); }
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        button a {
+            color: #03e9f4; 
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #333; 
+            border: 1px solid #03e9f4;
+            transition: background-color 0.3s ease; /* Added transition */
+        }
+
+        button a:hover {
+            background-color: #03e9f4;
+            color: white;
+            animation: glowButton 1s infinite alternate; /* Added glow animation for button hover */
+        }
+
+        @keyframes glowButton {
+            0% { box-shadow: 0 0 10px #03e9f4; }
+            100% { box-shadow: 0 0 20px #03e9f4; }
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Welcome To XMangApp</h1>
+            <button><a href="library.html">Explore</a></button>
+        </div>
+    </div>
+</body>
+</html>
