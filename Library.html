@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+     <link rel="stylesheet" href="style4.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<header>
+        <h1>Library</h1>
+        <div class="dropdown">
+  <button class="dropbtn"><i class="fas fa-bars"></i></button>
+  <div class="dropdown-content">
+    <a href="library.html"><i class="fas fa-book"></i> </a>
+    <a href="search.html"><i class="fas fa-search"></i></a>
+    <a href="settings.html"><i class="fas fa-cog"></i></a>
+      <a onclick="confirmExit()"><i class="fas fa-sign-out-alt"></i></a>
+  </div>
+</div>
+    </header>
+    
+<body>
+    <div class="library-container" id="libraryContainer">
+        
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const library = JSON.parse(localStorage.getItem('library')) || {};
+            const libraryContainer = document.getElementById('libraryContainer');
+
+            
+            Object.keys(library).forEach(title => {
+                const coverSrc = library[title].coverSrc;
+
+                
+                const mangaItem = document.createElement('div');
+                mangaItem.classList.add('manga-item');
+
+                
+    const mangaLink = document.createElement('a');
+      mangaLink.href = getTitlePagePath(title);
+        mangaLink.style.textDecoration = 'none'; 
+      const mangaCover = document.createElement('img');
+         mangaCover.src = coverSrc;
+        mangaCover.alt = title;
+        mangaCover.classList.add('manga-cover');
+
+                
+         const mangaTitle = document.createElement('div');
+          mangaTitle.textContent = title;
+          mangaTitle.classList.add('manga-title');
+
+              
+                mangaLink.appendChild(mangaCover);
+                mangaLink.appendChild(mangaTitle);
+
+                
+                mangaItem.appendChild(mangaLink);
+
+            
+                libraryContainer.appendChild(mangaItem);
+            });
+
+            
+            function getTitlePagePath(title) {
+     switch (title) {
+         case 'Black Clover':
+          return 'Black Clover.html'; 
+                        
+        case 'That Time I Got Reincarnated as a Slime':
+          return 'TTIGRAAS.html'; 
+          
+        case 'One-Punch Man':
+          return 'One-Punch Man.html'; 
+          
+          case 'My Hero Academia':
+          return 'My Hero Academia.html'; 
+          
+case 'So Im a Spider So What':
+       return 'So Im a Spider so What.html'; 
+       case 'Survival Story Of A Sword King In A Fantasy World':
+       return 'Hanbin.html'; 
+       
+    case 'Mairimashita Iruma-kun':
+          return 'Iruma.html'; 
+           default:
+         return `${title.replace(/\s+/g, '-').toLowerCase()}.html`; // Default path for other titles
+                }
+            }
+
+          
+            document.querySelectorAll('.manga-item').forEach(mangaItem => {
+                mangaItem.addEventListener('click', () => {
+                    const mangaLink = mangaItem.querySelector('a');
+                    window.location.href = mangaLink.href; 
+                });
+            });
+        });
+      function confirmExit() {
+            if (confirm("Are you really leaving?")) {
+                // If the user confirms, exit the system
+                alert("I HATE YOU!!!");
+                window.close();
+            } else {
+              alert("Yehey!! Thank You!");
+                // If the user cancels, do nothing
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hero Academia</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="manga-container">
+        <div class="manga-info">
+          <button onclick="goBack()" class="back-button">
+                <i class="fas fa-arrow-left"></i> 
+<div class="dropdown" id="optionDropdown">
+  <button class="option-button" onclick="toggleDropdown()">
+    <i class="fas fa-ellipsis-v"></i>
+  </button>
+  <div class="dropdown-content" id="optionDropdownContent">
+    <a href="#" onclick="downloadManga()">Download</a>
+    <a href="#" onclick="openInWebView()">Open in WebView</a>
+  </div>
+</div>
+</button>
+
+            <div class="manga-details">
+                <img src="Manga/images3.jpg" alt="Manga Cover" class="manga-cover">
+                <div>
+         <h1 class="manga-title">My Hero Academia</h1>
+      <p class="manga-author"><i class="fas fa-user"></i> HORIKOSHI Kouhei</p>
+                </div>
+            </div>
+            <button id="heartBtn" onclick="toggleLibrary()">
+                <i id="heartIcon" class="fas fa-heart"></i>
+            </button>
+            <div class="genres">
+      <div class="genre">Action</div>
+                <div class="genre">Fantasy</div>
+                <div class="genre">Comedy</div>
+                <div class="genre">Drama</div>
+                <div class="genre">Adventure</div>
+                <div class="genre">Manga</div>
+            </div>
+            <div class="manga-chapters">
+                <h2 class="chapter-heading">420 Chapters</h2>
+                <ul class="chapter-list">
+                    <li><a href="Chapter 420.html">Chapter 420</a></li>
+                   <li>Chapter 419</li>
+                    <li>Chapter 418</li>
+                    <li>Chapter 417</li>
+                    <li>Chapter 416</li>
+                    <li><a href="Chapter 415.html">Chapter 415</a></li>
+                    <li>Chapter 414</li>
+                    <li>Chapter 413</li>
+                    <li>Chapter 412</li>
+                    <li>Chapter 411</li>
+                    <li>Chapter 410</li>
+                   <li>Chapter 409</li>
+                    <li>Chapter 408</li>
+                    <li>Chapter 407</li>
+                    <li>Chapter 406</li>
+                    <li>Chapter 405</li>
+                    <li>Chapter 404</li>
+                    <li>Chapter 403</li>
+                    <li>Chapter 402</li>
+                    <li>Chapter 401</li>
+                    <li>Chapter 400</li>
+                    <li>Chapter 399</li>
+                    <li>Chapter 398</li>
+                    <li>Chapter 397</li>
+                    <li>Chapter 396</li>
+                    <li>Chapter 395</li>
+                    <li>Chapter 394</li>
+                    <li>Chapter 393</li>
+                    <li>Chapter 392</li>
+                    <li>Chapter 391</li>
+                    <li>Chapter 390</li>
+                    <li>Chapter 389</li>
+                    <li>Chapter 388</li>
+                    <li>Chapter 387</li>
+                    <li>Chapter 386</li>
+                    <li>Chapter 385</li>
+                    <li>Chapter 384</li>
+                    <li>Chapter 383</li>
+                    <li>Chapter 382</li>
+                    <li>Chapter 381</li>
+                    <li>Chapter 380</li>
+                    <li>Chapter 379</li>
+                    <li>Chapter 378</li
+                    <li>Chapter 377</li>
+                    <li>Chapter 376</li>
+                    <li>Chapter 375</li>
+                    <li>Chapter 374</li>
+                    <li>Chapter 373</li>
+                    <li>Chapter 372</li>
+                    <li>Chapter 371</li>
+                    <li>Chapter 370</li>
+                    <li>Chapter 369</li>
+                    <li>Chapter 368</li>
+                    <li>Chapter 367</li>
+                    <li>Chapter 366</li>
+                    <li>Chapter 365</li>
+                    <li>Chapter 364</li>
+                    <li>Chapter 363</li>
+                    <li>Chapter 362</li>
+                    <li>Chapter 361</li>
+                    <li>Chapter 360</li>
+                    <li>Chapter 359</li>
+                    <li>Chapter 358</li>
+                    <li>Chapter 357</li>
+                    <li>Chapter 356</li>
+                    <li>Chapter 355</li>
+                    <li>Chapter 354</li>
+                    <li>Chapter 353</li>
+                    <li>Chapter 352</li>
+                    <li>Chapter 351</li>
+                    <li>Chapter 350</li>
+                    <li>Chapter 349</li>
+                    <li>Chapter 348</li>
+                    <li>Chapter 347</li>
+                    <li>Chapter 346</li>
+                    <li>Chapter 345</li>
+                    <li>Chapter 344</li>
+                    <li>Chapter 343</li>
+                    <li>Chapter 342</li>
+                    <li>Chapter 341</li>
+                    <li>Chapter 339</li>
+                    <li>Chapter 338</li>
+                    <li>Chapter 337</li>
+                    <li>Chapter 336</li>
+                    <li>Chapter 335</li>
+                    <li>Chapter 334</li>
+                    <li>Chapter 333</li>
+                    <li>Chapter 332</li>
+                    <li>Chapter 331</li>
+                    <li>Chapter 330</li>
+                    <li>Chapter 329</li>
+                    <li>Chapter 328</li>
+                    <li>Chapter 327</li>
+                    <li>Chapter 326</li>
+                    <li>Chapter 325</li>
+                    <li>Chapter 324</li>
+                    <li>Chapter 323</li>
+                    <li>Chapter 322</li>
+                    <li>Chapter 321</li>
+                    <li>Chapter 320</li>
+                    <li>Chapter 319</li>
+                    <li>Chapter 318</li>
+                    <li>Chapter 317</li>
+                    <li>Chapter 316</li>
+                    <li>Chapter 314</li>
+                    <li>Chapter 313</li>
+                    <li>Chapter 312</li>
+                    <li>Chapter 311</li>
+                    <li>Chapter 310</li>
+                    <li>Chapter 309</li>
+                    <li>Chapter 308</li>
+                    <li>Chapter 307</li>
+                    <li>Chapter 306</li>
+                    <li>Chapter 305</li>
+                    <li>Chapter 304</li>
+                    <li>Chapter 303</li>
+                    <li>Chapter 302</li>
+                    <li>Chapter 301</li>
+                   <li>Chapter 300</li>
+                    <li>Chapter 299</li>
+                    <li>Chapter 298</li>
+                    <li>Chapter 297</li>
+                    <li>Chapter 296</li>
+                    <li>Chapter 295</li>
+                    <li>Chapter 294</li>
+                    <li>Chapter 293</li>
+                    <li>Chapter 292</li>
+                    <li>Chapter 291</li>
+                    <li>Chapter 290</li>
+                    <li>Chapter 289</li>
+                    <li>Chapter 288</li>
+                    <li>Chapter 287</li>
+                    <li>Chapter 286</li>
+                    <li>Chapter 285</li>
+                    <li>Chapter 284</li>
+                    <li>Chapter 283</li>
+                    <li>Chapter 282</li>
+                    <li>Chapter 281</li>
+                    <li>Chapter 280</li>
+                    <li>Chapter 279</li>
+                    <li>Chapter 278</li>
+                    <li>Chapter 277</li>
+                    <li>Chapter 276</li>
+                    <li>Chapter 275</li>
+                    <li>Chapter 274</li>
+                    <li>Chapter 273</li>
+                    <li>Chapter 272</li>
+                    <li>Chapter 271</li>
+                    <li>Chapter 270</li>
+                    <li>Chapter 269</li>
+                    <li>Chapter 268</li>
+                    <li>Chapter 267</li>
+                    <li>Chapter 266</li>
+                    <li>Chapter 265</li>
+                    <li>Chapter 264</li>
+                    <li>Chapter 263</li>
+                    <li>Chapter 262</li>
+                    <li>Chapter 261</li>
+                    <li>Chapter 260</li>
+                    <li>Chapter 259</li>
+                    <li>Chapter 258</li>
+                    <li>Chapter 257</li>
+                    <li>Chapter 256</li>
+                    <li>Chapter 255</li>
+                    <li>Chapter 254</li>
+                    <li>Chapter 253</li>
+                    <li>Chapter 252</li>
+                    <li>Chapter 251</li>
+                    <li>Chapter 250</li>
+                    <li>Chapter 249</li>
+                    <li>Chapter 248</li>
+                    <li>Chapter 247</li>
+                    <li>Chapter 246</li>
+                    <li>Chapter 245</li>
+                    <li>Chapter 244</li>
+                    <li>Chapter 243</li>
+                    <li>Chapter 242</li>
+                    <li>Chapter 241</li>
+                    <li>Chapter 239</li>
+                    <li>Chapter 238</li>
+                    <li>Chapter 237</li>
+                    <li>Chapter 236</li>
+                    <li>Chapter 235</li>
+                    <li>Chapter 234</li>
+                    <li>Chapter 233</li>
+                    <li>Chapter 232</li>
+                    <li>Chapter 231</li>
+                    <li>Chapter 230</li>
+                    <li>Chapter 229</li>
+                    <li>Chapter 228</li>
+                    <li>Chapter 227</li>
+                    <li>Chapter 226</li>
+                    <li>Chapter 225</li>
+                    <li>Chapter 224</li>
+                    <li>Chapter 223</li>
+                    <li>Chapter 222</li>
+                    <li>Chapter 221</li>
+                    <li>Chapter 220</li>
+                    <li>Chapter 219</li>
+                    <li>Chapter 218</li>
+                    <li>Chapter 217</li>
+                    <li>Chapter 216</li>
+                    <li>Chapter 214</li>
+                    <li>Chapter 213</li>
+                    <li>Chapter 212</li>
+                    <li>Chapter 211</li>
+                    <li>Chapter 210</li>
+                    <li>Chapter 209</li>
+                    <li>Chapter 208</li>
+                    <li>Chapter 207</li>
+                    <li>Chapter 206</li>
+                    <li>Chapter 205</li>
+                    <li>Chapter 204</li>
+                    <li>Chapter 203</li>
+                    <li>Chapter 202</li>
+                    <li>Chapter 201</li>
+                  <li>Chapter 200</li>
+                    <li>Chapter 199</li>
+                    <li>Chapter 198</li>
+                    <li>Chapter 197</li>
+                    <li>Chapter 196</li>
+                    <li>Chapter 195</li>
+                    <li>Chapter 194</li>
+                    <li>Chapter 193</li>
+                    <li>Chapter 192</li>
+                    <li>Chapter 191</li>
+                    <li>Chapter 190</li>
+                    <li>Chapter 189</li>
+                    <li>Chapter 188</li>
+                    <li>Chapter 187</li>
+                    <li>Chapter 186</li>
+                    <li>Chapter 185</li>
+                    <li>Chapter 184</li>
+                    <li>Chapter 183</li>
+                    <li>Chapter 182</li>
+                    <li>Chapter 181</li>
+                    <li>Chapter 180</li>
+                    <li>Chapter 179</li>
+                    <li>Chapter 178</li>
+                    <li>Chapter 177</li>
+                    <li>Chapter 176</li>
+                    <li>Chapter 175</li>
+                    <li>Chapter 174</li>
+                    <li>Chapter 173</li>
+                    <li>Chapter 172</li>
+                    <li>Chapter 171</li>
+                    <li>Chapter 170</li>
+                    <li>Chapter 169</li>
+                    <li>Chapter 168</li>
+                    <li>Chapter 167</li>
+                    <li>Chapter 166</li>
+                    <li>Chapter 165</li>
+                    <li>Chapter 164</li>
+                    <li>Chapter 163</li>
+                    <li>Chapter 162</li>
+                    <li>Chapter 161</li>
+                    <li>Chapter 160</li>
+                    <li>Chapter 159</li>
+                    <li>Chapter 158</li>
+                    <li>Chapter 157</li>
+                    <li>Chapter 156</li>
+                    <li>Chapter 155</li>
+                    <li>Chapter 154</li>
+                    <li>Chapter 153</li>
+                    <li>Chapter 152</li>
+                    <li>Chapter 151</li>
+                    <li>Chapter 150</li>
+                    <li>Chapter 149</li>
+                    <li>Chapter 148</li>
+                    <li>Chapter 147</li>
+                    <li>Chapter 146</li>
+                    <li>Chapter 145</li>
+                    <li>Chapter 144</li>
+                    <li>Chapter 143</li>
+                    <li>Chapter 142</li>
+                    <li>Chapter 141</li>
+                    <li>Chapter 139</li>
+                    <li>Chapter 138</li>
+                    <li>Chapter 137</li>
+                    <li>Chapter 136</li>
+                    <li>Chapter 135</li>
+                    <li>Chapter 134</li>
+                    <li>Chapter 133</li>
+                    <li>Chapter 132</li>
+                    <li>Chapter 131</li>
+                    <li>Chapter 130</li>
+                    <li>Chapter 129</li>
+                    <li>Chapter 128</li>
+                    <li>Chapter 127</li>
+                    <li>Chapter 126</li>
+                    <li>Chapter 125</li>
+                    <li>Chapter 124</li>
+                    <li>Chapter 123</li>
+                    <li>Chapter 122</li>
+                    <li>Chapter 121</li>
+                    <li>Chapter 120</li>
+                    <li>Chapter 119</li>
+                    <li>Chapter 118</li>
+                    <li>Chapter 117</li>
+                    <li>Chapter 116</li>
+                    <li>Chapter 114</li>
+                    <li>Chapter 113</li>
+                    <li>Chapter 112</li>
+                    <li>Chapter 111</li>
+                    <li>Chapter 110</li>
+                    <li>Chapter 109</li>
+                    <li>Chapter 108</li>
+                    <li>Chapter 107</li>
+                    <li>Chapter 106</li>
+                    <li>Chapter 105</li>
+                    <li>Chapter 104</li>
+                    <li>Chapter 103</li>
+                    <li>Chapter 102</li>
+                    <li>Chapter 101</li>
+                   <li>Chapter 100</li>
+                    <li>Chapter 99</li>
+                    <li>Chapter 98</li>
+                    <li>Chapter 97</li>
+                    <li>Chapter 96</li>
+                    <li>Chapter 95</li>
+                    <li>Chapter 94</li>
+                    <li>Chapter 93</li>
+                    <li>Chapter 92</li>
+                    <li>Chapter 91</li>
+                    <li>Chapter 90</li>
+                    <li>Chapter 89</li>
+                    <li>Chapter 88</li>
+                    <li>Chapter 87</li>
+                    <li>Chapter 86</li>
+                    <li>Chapter 85</li>
+                    <li>Chapter 84</li>
+                    <li>Chapter 83</li>
+                    <li>Chapter 82</li>
+                    <li>Chapter 81</li>
+                    <li>Chapter 80</li>
+                    <li>Chapter 79</li>
+                    <li>Chapter 78</li>
+                    <li>Chapter 77</li>
+                    <li>Chapter 76</li>
+                    <li>Chapter 75</li>
+                    <li>Chapter 74</li>
+                    <li>Chapter 73</li>
+                    <li>Chapter 72</li>
+                    <li>Chapter 71</li>
+                    <li>Chapter 70</li>
+                    <li>Chapter 69</li>
+                    <li>Chapter 68</li>
+                    <li>Chapter 67</li>
+                    <li>Chapter 66</li>
+                    <li>Chapter 65</li>
+                    <li>Chapter 64</li>
+                    <li>Chapter 63</li>
+                    <li>Chapter 62</li>
+                    <li>Chapter 61</li>
+                    <li>Chapter 60</li>
+                    <li>Chapter 59</li>
+                    <li>Chapter 58</li>
+                    <li>Chapter 57</li>
+                    <li>Chapter 56</li>
+                    <li>Chapter 55</li>
+                    <li>Chapter 54</li>
+                    <li>Chapter 53</li>
+                    <li>Chapter 52</li>
+                    <li>Chapter 51</li>
+                    <li>Chapter 50</li>
+                    <li>Chapter 49</li>
+                    <li>Chapter 48</li>
+                    <li>Chapter 47</li>
+                    <li>Chapter 46</li>
+                    <li>Chapter 45</li>
+                    <li>Chapter 44</li>
+                    <li>Chapter 43</li>
+                    <li>Chapter 42</li>
+                    <li>Chapter 41</li>
+                    <li>Chapter 39</li>
+                    <li>Chapter 38</li>
+                    <li>Chapter 37</li>
+                    <li>Chapter 36</li>
+                    <li>Chapter 35</li>
+                    <li>Chapter 34</li>
+                    <li>Chapter 33</li>
+                    <li>Chapter 32</li>
+                    <li>Chapter 31</li>
+                    <li>Chapter 30</li>
+                    <li>Chapter 29</li>
+                    <li>Chapter 28</li>
+                    <li>Chapter 27</li>
+                    <li>Chapter 26</li>
+                    <li>Chapter 25</li>
+                    <li>Chapter 24</li>
+                    <li>Chapter 23</li>
+                    <li>Chapter 22</li>
+                    <li>Chapter 21</li>
+                    <li>Chapter 20</li>
+                    <li>Chapter 19</li>
+                    <li>Chapter 18</li>
+                    <li>Chapter 17</li>
+                    <li>Chapter 16</li>
+                    <li>Chapter 14</li>
+                    <li>Chapter 13</li>
+                    <li>Chapter 12</li>
+                    <li>Chapter 11</li>
+                    <li>Chapter 10</li>
+                    <li>Chapter 9</li>
+                    <li>Chapter 8</li>
+                    <li>Chapter 7</li>
+                    <li>Chapter 6</li>
+                    <li>Chapter 5</li>
+                    <li>Chapter 4</li>
+                    <li>Chapter 3</li>
+                    <li>Chapter 2</li>
+                    <li>Chapter 1</li>
+                    <!-- Add more chapters as list items -->
+                </ul>
+            </div>
+    <button class="resume-button">
+      <a href="Chapter 415.html" class="play-button">
+       <i class="fas fa-play"></i>
+       </a>
+            </button>
+        </div>
+    </div>
+
+    <script>
+    function goBack() {
+            window.history.back(); // Go back to the previous page in history
+        }
+        // Function to toggle library status
+        function toggleLibrary() {
+            const title = 'My Hero Academia';
+            const coverSrc = 'Manga/images3.jpg';
+
+            let library = JSON.parse(localStorage.getItem('library')) || {};
+
+            const heartIcon = document.getElementById('heartIcon');
+
+            if (library[title]) {
+                // Item is in library, remove it
+                delete library[title];
+                heartIcon.style.color = 'black'; // Change heart icon color to black (not added)
+                alert('Item removed from library');
+            } else {
+                // Item is not in library, add it
+                library[title] = { coverSrc };
+                heartIcon.style.color = 'red'; // Change heart icon color to red (added)
+                alert('Item added to library');
+            }
+
+            localStorage.setItem('library', JSON.stringify(library));
+        }
+
+        // Initialize heart button color based on library state
+        document.addEventListener('DOMContentLoaded', () => {
+            const title = 'My Hero Academia';
+            const library = JSON.parse(localStorage.getItem('library')) || {};
+            const heartIcon = document.getElementById('heartIcon');
+
+            if (library[title]) {
+                // Item is in library, set heart icon color to red
+                heartIcon.style.color = 'red';
+            } else {
+                // Item is not in library, set heart icon color to black
+                heartIcon.style.color = 'black';
+            }
+        });
+        // Function to toggle the display of the dropdown menu
+function toggleDropdown() {
+  const dropdownContent = document.getElementById('optionDropdownContent');
+  dropdownContent.classList.toggle('show');
+}
+
+// Function to handle the download option
+function downloadManga() {
+  // Add your download logic here
+  alert('Download initiated');
+}
+
+// Function to handle the open in WebView option
+function openInWebView() {
+  // Add your open in WebView logic here
+  alert('Opening in WebView');
+}
+
+// Close the dropdown menu when clicking outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.option-button')) {
+    const dropdowns = document.getElementsByClassName('dropdown-content');
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+          background-color: rgba(0, 0, 0, 0.8);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #imageContainer {
+          padding-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Adjust as needed */
+        }
+        .imagePreview {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Preserve aspect ratio */
+        }
+        .topBar {
+          color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: -20px;
+            left: 0px;
+            right: 0px;
+            background-color:black;
+            z-index: 1000;
+        }
+        .topBar .icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .optionsMenu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px;
+        }
+        .optionsMenu label {
+            display: block;
+            margin-bottom: 10px;
+            color: black;
+        }
+#navigationButtons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            left: 60px;
+            right: 60px;
+            z-index: 1000;
+        }
+        button {
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #imageInfo {
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="topBar">
+        <i class="fas fa-arrow-left icon backButton" onclick="goBack()"></i>
+        <h1>Chapter 415</h1>
+        <i class="fas fa-ellipsis-v icon optionsButton" onclick="toggleOptionsMenu()"></i>
+        <div class="optionsMenu" id="optionsMenu">
+            <label for="contrastRange">Contrast:</label>
+            <input type="range" id="contrastRange" min="0" max="200" value="100" onchange="adjustContrast()">
+            <label for="zoomRange">Zoom:</label>
+            <input type="range" id="zoomRange" min="50" max="200" value="100" onchange="adjustZoom()">
+        </div>
+    </div>
+
+    <div id="imageContainer">
+        <img id="previewImage" class="imagePreview">
+    </div>
+
+    <div id="navigationButtons">
+        <button onclick="showPreviousImage()"><i class="fas fa-chevron-left"></i></button>
+        <p id="imageInfo"></p>
+        <button onclick="showNextImage()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        // List of image URLs
+        const imageUrls = [
+            'MHA Chapters/415/001.png',
+            'MHA Chapters/415/002.png',
+            'MHA Chapters/415/003.png',
+            'MHA Chapters/415/004.png',
+            'MHA Chapters/415/005.png',
+            'MHA Chapters/415/006.png',
+            'MHA Chapters/415/007.png',
+            'MHA Chapters/415/008.png',
+            'MHA Chapters/415/009.png',
+            'MHA Chapters/415/010.png',
+            
+        ];
+
+        let currentIndex = 0;
+
+        // Function to display the current image
+        function displayImage() {
+            const imgElement = document.getElementById('previewImage');
+            imgElement.src = imageUrls[currentIndex];
+            imgElement.alt = `Image ${currentIndex + 1} of ${imageUrls.length}`;
+        }
+
+        // Function to show the next image
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % imageUrls.length;
+            displayImage();
+        }
+
+        // Function to show the previous image
+        function showPreviousImage() {
+            currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+            displayImage();
+        }
+
+        // Function to adjust contrast
+        function adjustContrast() {
+            const contrastValue = document.getElementById('contrastRange').value;
+            const imgElement = document.getElementById('previewImage');
+            imgElement.style.filter = `contrast(${contrastValue}%)`;
+        }
+
+        // Function to adjust zoom
+        function adjustZoom() {
+            const zoomValue = document.getElementById('zoomRange').value;
+            const imgElement = document.getElementById('previewImage');
+            imgElement.style.transform = `scale(${zoomValue / 100})`;
+        }
+
+        // Function to toggle options menu visibility
+        function toggleOptionsMenu() {
+            const optionsMenu = document.getElementById('optionsMenu');
+            optionsMenu.style.display = optionsMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to go back (simulate back button behavior)
+        function goBack() {
+            history.back(); // Go back to the previous page (if possible)
+        }
+        // Function to display the current image and image information
+function displayImage() {
+    const imgElement = document.getElementById('previewImage');
+    imgElement.src = imageUrls[currentIndex];
+    imgElement.alt = `Image ${currentIndex + 1} of ${imageUrls.length}`;
+    
+    // Update image information
+    const imageInfo = document.getElementById('imageInfo');
+    imageInfo.textContent = ` ${currentIndex + 1} / ${imageUrls.length}`;
+}
+
+// Function to show the next image
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % imageUrls.length;
+    displayImage();
+}
+
+// Function to show the previous image
+function showPreviousImage() {
+    currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+    displayImage();
+}
+
+// Display the initial image and image information on page load
+displayImage();
+// Function to show the next image or next folder
+function showNextImage() {
+    if (currentIndex === imageUrls.length - 1) {
+        loadNextFolder();
+    } else {
+        currentIndex++;
+        displayImage();
+    }
+}
+
+// Function to show the previous image or previous folder
+function showPreviousImage() {
+    if (currentIndex === 0) {
+        loadPreviousFolder();
+    } else {
+        currentIndex--;
+        displayImage();
+    }
+}
+
+// Function to load the next folder
+function loadNextFolder() {
+    const currentFolderNumber = 363; // Current folder number
+    const nextFolderNumber = currentFolderNumber + 1; // Calculate next folder number
+    const nextFolderName = nextFolderNumber.toString().padStart(3, '0'); // Format next folder name
+    const nextFolder = `MHA Chapters/${nextFolderName}`; // Construct next folder path
+    const nextFolderImages = getNextFolderImages(nextFolder); // Get images of the next folder
+
+    if (nextFolderImages.length > 0) {
+        currentIndex = 0; // Move to the first image in the next folder
+        imageUrls = nextFolderImages; // Set image URLs to the next folder's images
+        displayImage();
+    } else {
+        alert('No next chapter available');
+    }
+}
+
+// Function to load the previous folder
+function loadPreviousFolder() {
+    const currentFolderNumber = 363; // Current folder number
+    const previousFolderNumber = currentFolderNumber - 1; // Calculate previous folder number
+    const previousFolderName = previousFolderNumber.toString().padStart(3, '0'); // Format previous folder name
+    const previousFolder = `MHA Chapters/${previousFolderName}`; // Construct previous folder path
+    const previousFolderImages = getPreviousFolderImages(previousFolder); // Get images of the previous folder
+
+    if (previousFolderImages.length > 0) {
+        currentIndex = previousFolderImages.length - 1; // Move to the last image in the previous folder
+        imageUrls = previousFolderImages; // Set image URLs to the previous folder's images
+        displayImage();
+    } else {
+        alert('No previous chapter available');
+    }
+}
+
+// Function to get images of the next folder
+function getNextFolderImages(nextFolder) {
+    // Logic to fetch images of the next folder from the server or define them manually
+    // For demonstration, I'll just return an empty array
+    return [];
+}
+
+// Function to get images of the previous folder
+function getPreviousFolderImages(previousFolder) {
+    // Logic to fetch images of the previous folder from the server or define them manually
+    // For demonstration, I'll just return an empty array
+    return [];
+}
+
+
+
+
+        // Display the initial image on page load
+        displayImage();
+    </script>
+</body>
+</html>
